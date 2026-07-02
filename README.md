@@ -21,7 +21,7 @@ K1 LSTM-AE → K2 XGBoost → K3 Graph Risk Tensor → K4 PPO → IEC 62443 Gate
 | SL4 detections | 57/63 (90.5%) |
 
 ## Dataset
-Zenodo: [DOI linki buraya]
+Zenodo: [10.5281/zenodo.21130212]
 
 ## Quick Start
 pip install -r requirements.txt
@@ -34,4 +34,3 @@ python attacks/attack_t0814_asterix_highfreq.py # T0814
 python attacks/attack_t0831_nats_live.py        # T0831
 
 ## Citation
-[thesis + NATO paper]
