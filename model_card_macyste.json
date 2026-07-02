@@ -1,0 +1,40 @@
+{
+  "model_name": "GRAD-RL MaCySTe Live Final",
+  "lstm_ae": "detective_lstm_macyste_live_final.keras",
+  "xgboost": "detective_classifier_macyste_live_final.pkl",
+  "threshold": 0.0004756,
+  "p99": 0.0003963325806601919,
+  "val_loss": 0.000277,
+  "train_samples": 78892,
+  "classes": [
+    "normal",
+    "t0856_heading_drift",
+    "t0856_heading_replay",
+    "t0814_asterix_highfreq",
+    "combined_t0856_t0814"
+  ],
+  "features": [
+    "rate_of_turn",
+    "speed_knots",
+    "lat",
+    "lon",
+    "pump_rpm",
+    "flow_rate",
+    "oil_temp",
+    "oil_pressure",
+    "heading_sin",
+    "heading_cos",
+    "rate_of_turn_rstd"
+  ],
+  "seq_len": 10,
+  "offline_eval": {
+    "dataset": "macyste_dataset_v2.csv",
+    "n_samples": 91766,
+    "accuracy": 0.9828,
+    "fpr": 0.0088,
+    "T0856_f1": 0.6424,
+    "T0814_f1": 0.6607,
+    "mttd_T0856_rows": 1,
+    "mttd_T0814_rows": 0
+  }
+}
