@@ -21,7 +21,7 @@ K1 LSTM-AE → K2 XGBoost → K3 Graph Risk Tensor → K4 PPO → IEC 62443 Gate
 | SL4 detections | 57/63 (90.5%) |
 
 ## Dataset
-Zenodo: [10.5281/zenodo.21130212]
+Zenodo: [[10.5281/zenodo.21130212]](https://doi.org/10.5281/zenodo.21130212)
 
 ## Quick Start
 pip install -r requirements.txt
