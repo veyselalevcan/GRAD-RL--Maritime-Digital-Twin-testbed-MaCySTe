@@ -81,7 +81,7 @@ python training/retrain_macyste.py --dataset data.csv
 
 Notes:
 - The collector and attack scripts expect a running MaCySTe testbed. IP addresses, container names and the `/root/MaCySTe` output paths are set at the top of each script, so adjust them for your setup.
-- The trained model files are not stored in this repository. Retrain them with `training/retrain_macyste.py` on the dataset below.
+- The trained model files are not stored in this repository. The API loads them from `models/`, so place them there or retrain with `training/retrain_macyste.py` on the dataset below.
 
 ## Dataset
 
