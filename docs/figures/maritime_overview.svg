@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#37474f"/>
+    </marker>
+  </defs>
+  <rect width="1000" height="640" fill="#ffffff"/>
+
+  <text x="500" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#102a43">GRAD-RL on the MaCySTe virtual ship (FSRU digital twin)</text>
+  <text x="500" y="54" text-anchor="middle" font-size="13" fill="#52606d">Where the attacks enter the vessel, and how the four-stage defense reacts</text>
+
+  <!-- sea -->
+  <rect x="20" y="70" width="640" height="300" rx="10" fill="#e8f1f8"/>
+  <path d="M20,345 Q60,335 100,345 T180,345 T260,345 T340,345 T420,345 T500,345 T580,345 T660,345 L660,370 L20,370 Z" fill="#c9deef"/>
+
+  <!-- hull -->
+  <path d="M60,240 L615,240 L655,262 L605,330 L95,330 Z" fill="#455a64" stroke="#263238" stroke-width="2"/>
+  <rect x="60" y="236" width="555" height="6" fill="#b71c1c"/>
+  <!-- rudder -->
+  <path d="M72,330 L72,352 L88,352 L90,330 Z" fill="#37474f"/>
+
+  <!-- LNG tanks -->
+  <rect x="330" y="192" width="120" height="48" rx="24" fill="#eceff1" stroke="#78909c" stroke-width="2"/>
+  <rect x="470" y="192" width="120" height="48" rx="24" fill="#eceff1" stroke="#78909c" stroke-width="2"/>
+  <text x="390" y="221" text-anchor="middle" font-size="12" fill="#37474f">LNG tank</text>
+  <text x="530" y="221" text-anchor="middle" font-size="12" fill="#37474f">LNG tank</text>
+
+  <!-- superstructure -->
+  <rect x="88" y="150" width="150" height="90" fill="#eceff1" stroke="#78909c" stroke-width="2"/>
+  <rect x="100" y="162" width="126" height="16" fill="#90caf9" stroke="#5c8fb8"/>
+  <text x="163" y="205" text-anchor="middle" font-size="14" font-weight="700" fill="#102a43">Bridge zone</text>
+  <text x="163" y="223" text-anchor="middle" font-size="11" fill="#37474f">NMEA feed, ECDIS, radar</text>
+  <rect x="250" y="190" width="28" height="50" fill="#607d8b" stroke="#37474f"/>
+  <!-- radar mast -->
+  <line x1="163" y1="150" x2="163" y2="108" stroke="#37474f" stroke-width="3"/>
+  <path d="M143,108 Q163,92 183,108" fill="none" stroke="#37474f" stroke-width="3"/>
+
+  <!-- compartments in hull -->
+  <rect x="108" y="252" width="150" height="66" rx="6" fill="#ffe0b2" stroke="#e65100" stroke-width="1.5"/>
+  <text x="183" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#4e342e">Control zone</text>
+  <text x="183" y="292" text-anchor="middle" font-size="11" fill="#4e342e">Autopilot, rudder PLC</text>
+  <text x="183" y="307" text-anchor="middle" font-size="11" fill="#4e342e">NATS message broker</text>
+
+  <rect x="278" y="252" width="150" height="66" rx="6" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="353" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#1b5e20">Field zone</text>
+  <text x="353" y="292" text-anchor="middle" font-size="11" fill="#1b5e20">SGS pump PLCs (Modbus)</text>
+  <text x="353" y="307" text-anchor="middle" font-size="11" fill="#1b5e20">pump rpm, flow, oil</text>
+
+  <rect x="448" y="252" width="140" height="66" rx="6" fill="#d1c4e9" stroke="#4527a0" stroke-width="1.5"/>
+  <text x="518" y="274" text-anchor="middle" font-size="13" font-weight="700" fill="#311b92">SIEM / collector</text>
+  <text x="518" y="292" text-anchor="middle" font-size="11" fill="#311b92">1 Hz telemetry, 11</text>
+  <text x="518" y="307" text-anchor="middle" font-size="11" fill="#311b92">features to GRAD-RL</text>
+
+  <!-- attack markers -->
+  <g font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <circle cx="226" cy="190" r="13" fill="#c62828"/><text x="226" y="195">1</text>
+    <circle cx="163" cy="80" r="13" fill="#c62828"/><text x="163" y="85">2</text>
+    <circle cx="80" cy="360" r="13" fill="#c62828"/><text x="80" y="365">3</text>
+    <circle cx="353" cy="262" r="0" fill="#c62828"/>
+    <circle cx="430" cy="258" r="13" fill="#c62828"/><text x="430" y="263">4</text>
+    <circle cx="240" cy="272" r="0" fill="#c62828"/>
+  </g>
+  
+
+  <!-- legend of attacks -->
+  <rect x="680" y="70" width="300" height="300" rx="10" fill="#fff5f5" stroke="#e57373"/>
+  <text x="696" y="96" font-size="15" font-weight="700" fill="#b71c1c">Attack scenarios (MITRE ATT&amp;CK for ICS)</text>
+  <g font-size="12" fill="#37474f">
+    <circle cx="700" cy="124" r="10" fill="#c62828"/><text x="700" y="128" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">1</text>
+    <text x="718" y="121" font-weight="700" fill="#102a43">T0856 Spoof Reporting Message</text>
+    <text x="718" y="137">fake heading, rate of turn, speed on NMEA</text>
+
+    <circle cx="700" cy="170" r="10" fill="#c62828"/><text x="700" y="174" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">2</text>
+    <text x="718" y="167" font-weight="700" fill="#102a43">T0814 Denial of Service</text>
+    <text x="718" y="183">flood of NATS and ASTERIX radar traffic</text>
+
+    <circle cx="700" cy="216" r="10" fill="#c62828"/><text x="700" y="220" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">3</text>
+    <text x="718" y="213" font-weight="700" fill="#102a43">T0855 Unauthorized Command</text>
+    <text x="718" y="229">rudder setpoint pushed +15 degrees</text>
+
+    <circle cx="700" cy="262" r="10" fill="#c62828"/><text x="700" y="266" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">4</text>
+    <text x="718" y="259" font-weight="700" fill="#102a43">T0813 Denial of Control</text>
+    <text x="718" y="275">Modbus flood on the pump PLC</text>
+  </g>
+  <text x="696" y="312" font-size="12" fill="#37474f">Why it matters: a false heading or a lost</text>
+  <text x="696" y="328" font-size="12" fill="#37474f">radar picture means the crew steers on bad</text>
+  <text x="696" y="344" font-size="12" fill="#37474f">data. The reports look valid at packet level,</text>
+  <text x="696" y="360" font-size="12" fill="#37474f">so the defense checks the physics.</text>
+
+  <!-- pipeline -->
+  <text x="500" y="406" text-anchor="middle" font-size="16" font-weight="700" fill="#102a43">GRAD-RL decision pipeline (one decision per second)</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="20" y="420" width="140" height="100" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+    <text x="90" y="444" font-weight="700" fill="#0d47a1">Telemetry</text>
+    <text x="90" y="464" fill="#37474f">11 features</text>
+    <text x="90" y="480" fill="#37474f">10-step window</text>
+    <text x="90" y="496" fill="#37474f">heading, speed, ROT,</text>
+    <text x="90" y="512" fill="#37474f">pump, oil, position</text>
+
+    <rect x="188" y="420" width="140" height="100" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="258" y="444" font-weight="700" fill="#1b5e20">K1 LSTM-AE</text>
+    <text x="258" y="464" fill="#37474f">Is it normal?</text>
+    <text x="258" y="480" fill="#37474f">error above 0.000476</text>
+    <text x="258" y="496" fill="#37474f">means anomaly and</text>
+    <text x="258" y="512" fill="#37474f">names the odd sensor</text>
+
+    <rect x="356" y="420" width="140" height="100" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="1.5"/>
+    <text x="426" y="444" font-weight="700" fill="#e65100">K2 XGBoost</text>
+    <text x="426" y="464" fill="#37474f">Which attack?</text>
+    <text x="426" y="480" fill="#37474f">maps to a MITRE</text>
+    <text x="426" y="496" fill="#37474f">technique with a</text>
+    <text x="426" y="512" fill="#37474f">confidence score</text>
+
+    <rect x="524" y="420" width="140" height="100" rx="8" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="1.5"/>
+    <text x="594" y="444" font-weight="700" fill="#4a148c">K3 Graph risk</text>
+    <text x="594" y="464" fill="#37474f">How bad is it?</text>
+    <text x="594" y="480" fill="#37474f">CVSS 4.0 score x</text>
+    <text x="594" y="496" fill="#37474f">position in the ship</text>
+    <text x="594" y="512" fill="#37474f">network, SL1 to SL4</text>
+
+    <rect x="692" y="420" width="140" height="100" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+    <text x="762" y="444" font-weight="700" fill="#b71c1c">K4 PPO agent</text>
+    <text x="762" y="464" fill="#37474f">What to do?</text>
+    <text x="762" y="480" fill="#37474f">proposes a response,</text>
+    <text x="762" y="496" fill="#37474f">for example isolate</text>
+    <text x="762" y="512" fill="#37474f">the NMEA feed</text>
+
+    <rect x="860" y="420" width="120" height="100" rx="8" fill="#eceff1" stroke="#37474f" stroke-width="1.5"/>
+    <text x="920" y="444" font-weight="700" fill="#102a43">IEC 62443 gate</text>
+    <text x="920" y="464" fill="#37474f">risk below 9.0:</text>
+    <text x="920" y="480" fill="#2e7d32" font-weight="700">act alone</text>
+    <text x="920" y="498" fill="#37474f">risk 9.0 or more:</text>
+    <text x="920" y="514" fill="#b71c1c" font-weight="700">officer approves</text>
+  </g>
+  <g stroke="#37474f" stroke-width="2" marker-end="url(#arr)">
+    <line x1="160" y1="470" x2="186" y2="470"/>
+    <line x1="328" y1="470" x2="354" y2="470"/>
+    <line x1="496" y1="470" x2="522" y2="470"/>
+    <line x1="664" y1="470" x2="690" y2="470"/>
+    <line x1="832" y1="470" x2="858" y2="470"/>
+  </g>
+
+  <!-- results strip -->
+  <rect x="20" y="548" width="960" height="72" rx="8" fill="#f5f7fa" stroke="#cfd8dc"/>
+  <g text-anchor="middle">
+    <text x="130" y="578" font-size="22" font-weight="700" fill="#1565c0">98.28%</text><text x="130" y="598" font-size="12" fill="#52606d">offline accuracy</text>
+    <text x="330" y="578" font-size="22" font-weight="700" fill="#1565c0">0.88%</text><text x="330" y="598" font-size="12" fill="#52606d">false positive rate</text>
+    <text x="530" y="578" font-size="22" font-weight="700" fill="#1565c0">0 to 1 s</text><text x="530" y="598" font-size="12" fill="#52606d">mean time to detect</text>
+    <text x="730" y="578" font-size="22" font-weight="700" fill="#1565c0">57 / 63</text><text x="730" y="598" font-size="12" fill="#52606d">SL4 detections (90.5%)</text>
+    <text x="900" y="578" font-size="22" font-weight="700" fill="#1565c0">91,766</text><text x="900" y="598" font-size="12" fill="#52606d">evaluated samples</text>
+  </g>
+</svg>
